@@ -160,7 +160,7 @@ Select option `1` to run pre-configured examples.
 #### Option B: Interactive Mode
 
 ```bash
-python seismic_predictor.py
+python sda_predictor.py
 ```
 Select option `2` to enter your own earthquake parameters.
 

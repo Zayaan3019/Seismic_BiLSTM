@@ -1,0 +1,18 @@
+================================================================================
+ADVANCED PLOTTING — SDA REQUIREMENTS==================================================================================
+
+[0/6] Regenerating Fig 04 architecture diagram...     Saved: fig04_architecture.png
+
+[1/6] Loading model and data...     Model loaded: sda_results/seismic_model_robust.pkl     Test samples: 2025     All samples (Table 02): 13495
+
+[2/6] Generating Fig 06 residual plots...     Saved: fig06_residual_plots.png
+
+[3/6] Generating Fig 07 sensitivity / physics plots...     Distance check (closer -> larger PSA):        5km / 20km mean ratio: 1.412        20km / 50km mean ratio: 1.581        50km / 100km mean ratio: 1.323        Min adjacent ratio : 1.300        Crossings          : 0     Magnitude check (larger Mw -> larger PSA):        Mw=6.0 / Mw=5.0 mean ratio: 10.665        Mw=7.0 / Mw=6.0 mean ratio: 5.897        Mw=8.0 / Mw=7.0 mean ratio: 3.052        Min adjacent ratio : 2.636        Crossings          : 0     Vs30 check (softer -> larger PSA):        Vs30=180 / Vs30=360 mean ratio: 1.485        Vs30=360 / Vs30=760 mean ratio: 1.395        Vs30=760 / Vs30=1500 mean ratio: 1.200        Min adjacent ratio : 1.200        Crossings          : 0     Depth check (shallower -> larger PSA):        Ztor=5km / Ztor=25km mean ratio: 1.451        Ztor=25km / Ztor=60km mean ratio: 1.150        Ztor=60km / Ztor=110km mean ratio: 1.150        Min adjacent ratio : 1.150        Crossings          : 0     Saved: fig07_sensitivity_plots.png
+
+[4/6] Generating Fig 08 and Fig 09...     Saved: fig08_shap_analysis.png     Saved: fig09_feature_importance.png
+
+[5/6] Generating Table 02 and Table 03...     Saved: table02_residuals_std.png     Saved: table03_performance.png
+
+[5b/6] Generating Fig 10, 11, 12 (physics / scaling plots)...     Saved: fig10_psa_spectra_distance.png     Saved: fig11_depth_site_sensitivity.png     Saved: fig12_im_vs_magnitude.png
+
+[6/6] Summary==================================================================================GeGenerated files in sda_results/:    fig06_residual_plots.png    fig07_sensitivity_plots.png    fig08_shap_analysis.png    fig09_feature_importance.png    table02_residuals_std.png    table03_performance.png==================================================================================ADADVANCED PLOTTING COMPLETEEXEXIT_ADVANCED:0==================================================================================

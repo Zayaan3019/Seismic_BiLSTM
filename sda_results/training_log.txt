@@ -1,0 +1,88 @@
+================================================================================
+BIDIRECTIONAL LSTM SEISMIC GROUND MOTION PREDICTION MODEL
+================================================================================
+Start Time: 2026-04-29 23:42:28
+================================================================================
+
+[1/10] Loading and preprocessing data...
+   Dataset loaded : 13495 clean records
+   Input features : 8  ['Earthquake_Magnitude', 'Ztor_km', 'Finite_Fault_Model', 'Rjb_km', 'log_Vs30', 'log_Rjb', 'Mw_sq', 'Mw_logR']
+   Output features: 30
+   Output domain  : natural-log transformed
+
+[2/10] Output directory ready: sda_results/
+
+[3/10] Generating data distribution and frequency plots...
+   Saved: Fig 01, Fig 02, Fig 03
+
+[4/10] Splitting dataset (70/15/15)...
+   Train: 9451 | Val: 2019 | Test: 2025
+
+[5/10] Scaling features and targets...
+
+[6/10] Building BiLSTM model...
+   Architecture : 8 -> [128->256->256]+residual -> BiLSTM(128x2) -> 30
+   Total params : 998,593
+   Device       : cpu
+
+[7/10] Training BiLSTM (AdamW + Huber + OneCycleLR + early stopping)...
+   Epoch    1/150 | train=0.16416 | val=0.10855 | lr=2.02e-04 | best_val=0.10855 @ ep1
+   Epoch   10/150 | train=0.07741 | val=0.07483 | lr=4.11e-04 | best_val=0.07483 @ ep10
+   Epoch   20/150 | train=0.07180 | val=0.07034 | lr=9.44e-04 | best_val=0.07034 @ ep20
+   Epoch   30/150 | train=0.06845 | val=0.06779 | lr=1.55e-03 | best_val=0.06655 @ ep26
+   Epoch   40/150 | train=0.06335 | val=0.06500 | lr=1.95e-03 | best_val=0.06384 @ ep34
+   Epoch   50/150 | train=0.06039 | val=0.06241 | lr=1.99e-03 | best_val=0.06241 @ ep50
+   Epoch   60/150 | train=0.05752 | val=0.06169 | lr=1.90e-03 | best_val=0.06083 @ ep56
+   Epoch   70/150 | train=0.05558 | val=0.06164 | lr=1.73e-03 | best_val=0.06063 @ ep68
+   Epoch   80/150 | train=0.05444 | val=0.06015 | lr=1.50e-03 | best_val=0.06015 @ ep80
+   Epoch   90/150 | train=0.05155 | val=0.06028 | lr=1.22e-03 | best_val=0.05961 @ ep87
+   Epoch  100/150 | train=0.04926 | val=0.06095 | lr=9.24e-04 | best_val=0.05961 @ ep87
+   Epoch  110/150 | train=0.04707 | val=0.06156 | lr=6.34e-04 | best_val=0.05961 @ ep87
+
+   Early stopping at epoch 117 (patience=30)
+
+   Best model: epoch 87, val_loss=0.059608
+
+[8/10] Evaluating model on all splits...
+
+   Train set metrics:
+   ----------------------------------------------------
+   MSE : 0.384743
+   RMSE: 0.620277
+   MAE : 0.462861
+   R2  : 0.934752
+
+   Val set metrics:
+   ----------------------------------------------------
+   MSE : 0.467022
+   RMSE: 0.683390
+   MAE : 0.520462
+   R2  : 0.918838
+
+   Test set metrics:
+   ----------------------------------------------------
+   MSE : 0.452671
+   RMSE: 0.672809
+   MAE : 0.510199
+   R2  : 0.924951
+
+[9/10] Generating Fig 04 (architecture) and Fig 05 (regression)...
+   Saved: Fig 04, Fig 05
+   Saved: Table 01
+
+[10/10] Saving model artefacts...
+   Saved: seismic_model_robust.pkl (BiLSTMWrapper)
+   Saved: scaler_X.pkl, scaler_y.pkl
+   Saved: bilstm_weights.pt
+   Saved: model_config.json
+
+================================================================================
+BIDIRECTIONAL LSTM TRAINING COMPLETE
+================================================================================
+End Time  : 2026-04-29 23:45:58
+Best Epoch: 87
+Train R²  : 0.9348
+Val R²    : 0.9188
+Test R²   : 0.9250
+Test RMSE : 0.6728
+================================================================================

@@ -1,0 +1,9 @@
+Loading data...
+Data ready: (9451, 6), (9451, 29)
+Model: 843,809 params
+Epoch 1/5 | train=0.32236 | val=0.22442
+Epoch 2/5 | train=0.22346 | val=0.18986
+Epoch 3/5 | train=0.20896 | val=0.19849
+Epoch 4/5 | train=0.20697 | val=0.19240
+Epoch 5/5 | train=0.20170 | val=0.18676
+5-epoch test PASSED

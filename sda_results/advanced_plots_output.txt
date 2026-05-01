@@ -1,0 +1,63 @@
+================================================================================
+ADVANCED PLOTTING - SDA REQUIREMENTS
+================================================================================
+
+[1/6] Loading model and data...
+   Model loaded from: sda_results/seismic_model_robust.pkl
+   Test samples: 2025
+   All samples (for Table 02): 13495
+
+[2/6] Generating Fig 06 residual plots...
+   Saved: fig06_residual_plots.png
+
+[3/6] Generating Fig 07 sensitivity / physics plots...
+   Physics check - distance effect (closer should be larger):
+      R=5km / R=25km: 1.231
+      R=25km / R=50km: 1.213
+      R=50km / R=75km: 1.161
+      Min adjacent ratio across periods: 1.091
+      Crossing points across periods: 0
+      Regularized distance-slope range dln(PSA)/dln(R+50): [-0.809, -0.392]
+   Physics check - magnitude effect (larger should be larger):
+      Mw=5.5 / Mw=4.5: 3.641
+      Mw=6.5 / Mw=5.5: 2.909
+      Mw=7.5 / Mw=6.5: 2.330
+      Min adjacent ratio across periods: 2.227
+      Crossing points across periods: 0
+      Regularized magnitude-slope range dln(PSA)/dMw: [0.925, 1.043]
+      Regularized magnitude-curvature range d2ln(PSA)/dMw2: [-0.250, -0.090]
+   Physics check - Vs30 effect (softer should be larger):
+      Vs30=180 / Vs30=360: 1.571
+      Vs30=360 / Vs30=760: 1.558
+      Vs30=760 / Vs30=1500: 1.106
+      Min adjacent ratio across periods: 1.100
+      Crossing points across periods: 0
+   Physics check - fault-type ranking (Normal <= Strike <= Reverse):
+      Strike Slip / Normal: 1.236
+      Reverse / Strike Slip: 1.222
+      Min adjacent ratio across periods: 1.038
+      Crossing points across periods: 0
+      Adjusted fault offsets ln(N/S), ln(R/S): -0.200, 0.200
+   Saved: fig07_sensitivity_plots.png
+   Saved versioned copy: fig07_sensitivity_plots_20260418_022656.png
+
+[4/6] Generating Fig 08 and Fig 09...
+   Saved: fig08_shap_analysis.png
+   Saved: fig09_feature_importance.png
+
+[5/6] Generating Table 02 and Table 03...
+   Saved: table02_residuals_std.png
+   Saved: table03_performance.png
+
+[6/6] Summary
+================================================================================
+Generated files in sda_results/:
+  fig06_residual_plots.png
+  fig07_sensitivity_plots.png
+  fig08_shap_analysis.png
+  fig09_feature_importance.png
+  table02_residuals_std.png
+  table03_performance.png
+================================================================================
+ADVANCED PLOTTING COMPLETE
+================================================================================

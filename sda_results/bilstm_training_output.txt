@@ -1,0 +1,32 @@
+================================================================================
+BIDIRECTIONAL LSTM SEISMIC GROUND MOTION PREDICTION MODEL
+================================================================================
+Start Time: 2026-04-29 10:34:36
+================================================================================
+
+[1/10] Loading and preprocessing data...
+   Dataset loaded : 13495 clean records
+   Input features : 6  ['Earthquake_Magnitude', 'Ztor_km', 'Finite_Fault_Model', 'Rjb_km', 'log_Vs30', 'log_Rjb']
+   Output features: 29
+   Output domain  : natural-log transformed
+
+[2/10] Output directory ready: sda_results/
+
+[3/10] Generating data distribution and frequency plots...
+   Saved: Fig 01, Fig 02, Fig 03
+
+[4/10] Splitting dataset (70/15/15)...
+   Train: 9451 | Val: 2019 | Test: 2025
+
+[5/10] Scaling features and targets...
+
+[6/10] Building BiLSTM model...
+   Architecture : 6 → [128→256→256→128] → BiLSTM(128×2) → 29
+   Total params : 843,809
+   Device       : cpu
+
+[7/10] Training BiLSTM (Adam + CosineAnnealing + early stopping)...
+   Epoch    1/800 | train=0.30266 | val=0.21458 | lr=1.00e-03 | best_val=0.21458 @ ep1
+   Epoch   20/800 | train=0.19351 | val=0.17494 | lr=9.98e-04 | best_val=0.17475 @ ep15
+   Epoch   40/800 | train=0.19309 | val=0.19342 | lr=9.94e-04 | best_val=0.16953 @ ep39
+EXIT_TRAINING:1 
